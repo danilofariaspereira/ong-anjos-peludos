@@ -5,6 +5,23 @@
     box-sizing: border-box;
 }
 
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+img, video, iframe, embed, object {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+table {
+    width: 100%;
+    table-layout: fixed;
+}
+
 :root {
     --primary-color: #FF6B6B;
     --secondary-color: #4ECDC4;
@@ -17,18 +34,28 @@
     --shadow-hover: 0 5px 20px rgba(0, 0, 0, 0.15);
 }
 
+html {
+    overflow-x: hidden;
+    max-width: 100%;
+}
+
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
     color: var(--text-color);
     background-color: var(--white);
     padding-top: 80px;
+    overflow-x: hidden;
+    max-width: 100%;
+    width: 100%;
 }
 
 .container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 /* Menu Flutuante */
@@ -319,15 +346,23 @@ body {
 }
 
 .social-link {
-    width: 50px;
+    min-width: 50px;
     height: 50px;
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 50%;
+    border-radius: 50px;
     color: var(--white);
     transition: all 0.3s ease;
     text-decoration: none;
+    padding: 0 20px;
+    gap: 8px;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.social-link svg {
+    flex-shrink: 0;
 }
 
 .social-link.instagram {
@@ -357,15 +392,22 @@ body {
 /* Presidente */
 .president-content {
     display: grid;
-    grid-template-columns: 1fr 2fr;
+    grid-template-columns: auto 2fr;
     gap: 50px;
     align-items: center;
 }
 
+.president-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .president-image img {
-    width: 100%;
-    height: auto;
-    border-radius: 15px;
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 50%;
     box-shadow: var(--shadow);
 }
 
@@ -493,6 +535,9 @@ body {
     color: var(--white);
     padding: 60px 20px;
     text-align: center;
+    width: 100%;
+    box-sizing: border-box;
+    overflow-x: hidden;
 }
 
 .page-header h1 {
@@ -981,11 +1026,102 @@ body {
 /* Content Sections */
 .content-section {
     padding: 60px 20px;
+    width: 100%;
+    box-sizing: border-box;
+    overflow-x: hidden;
 }
 
 .about-content {
     max-width: 900px;
     margin: 0 auto;
+}
+
+.logo-gradient-box {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    padding: 30px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 30px auto;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    max-width: 300px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.logo-gradient-box img {
+    max-width: 100%;
+    height: auto;
+    filter: brightness(0) invert(1);
+}
+
+.page-header .logo-gradient-box {
+    margin-bottom: 30px;
+}
+
+/* Seções Sobre a ONG */
+.about-section {
+    margin: 60px 0;
+}
+
+.about-section-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.about-section-content.reverse {
+    direction: rtl;
+}
+
+.about-section-content.reverse > * {
+    direction: ltr;
+}
+
+.about-text {
+    padding: 20px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.about-text h3 {
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.about-text p {
+    margin-bottom: 20px;
+    line-height: 1.8;
+    font-size: 1.1rem;
+    color: var(--text-color);
+}
+
+.about-image {
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: var(--shadow-hover);
+    box-sizing: border-box;
+}
+
+.about-image img {
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+    display: block;
+}
+
+.about-image img:hover {
+    transform: scale(1.05);
 }
 
 .values-list {
@@ -1456,6 +1592,60 @@ body {
     .events-content,
     .president-content {
         grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .president-image {
+        justify-content: center;
+    }
+
+    .president-image img {
+        width: 250px;
+        height: 250px;
+    }
+
+    .logo-gradient-box {
+        padding: 25px;
+        margin: 0 auto 20px auto;
+        max-width: 250px;
+    }
+
+    .about-section-content {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        width: 100%;
+    }
+
+    .about-section-content.reverse {
+        direction: ltr;
+    }
+
+    .about-text {
+        text-align: center;
+        padding: 15px;
+    }
+
+    .about-text h3 {
+        font-size: 1.5rem;
+    }
+
+    .about-image {
+        max-height: 400px;
+        width: 100%;
+    }
+
+    .container {
+        padding: 0 15px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .content-section {
+        padding: 40px 15px;
+    }
+
+    .page-header {
+        padding: 40px 15px;
     }
 
     .vmv-grid,
@@ -1501,21 +1691,64 @@ body {
         grid-template-columns: 1fr;
     }
 
+    .volunteer-cta-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .volunteer-cta-text {
+        text-align: center;
+    }
+
+    .volunteer-cta-text h2 {
+        font-size: 2rem;
+    }
+
+    .volunteer-cta-text h3 {
+        font-size: 1.5rem;
+    }
+
+    .volunteer-cta-text p {
+        font-size: 1rem;
+    }
+
+    .footer-social-small {
+        justify-content: center;
+    }
+
+    .footer-section {
+        text-align: center;
+    }
+
     .chatbot-container {
-        width: calc(100vw - 40px);
-        right: 20px;
+        position: fixed;
+        width: calc(100% - 40px);
+        max-width: 350px;
+        right: 50%;
         left: auto;
+        transform: translateX(50%);
         height: 400px;
+        bottom: 100px;
+        box-sizing: border-box;
     }
 
     .chatbot-wrapper {
         right: 20px;
         bottom: 20px;
+        left: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+    }
+
+    .footer-logo-btn {
+        margin: 0;
     }
 
     .scroll-to-top {
         left: 20px;
         bottom: 20px;
+        right: auto;
     }
 }
 
@@ -1540,10 +1773,28 @@ body {
     }
 
     .chatbot-container {
-        width: calc(100vw - 40px);
-        right: 20px;
+        position: fixed;
+        width: calc(100% - 40px);
+        max-width: 350px;
+        right: 50%;
         left: auto;
+        transform: translateX(50%);
         height: 350px;
+        bottom: 100px;
+        box-sizing: border-box;
+    }
+
+    .chatbot-wrapper {
+        right: 20px;
+        transform: none;
+        left: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+    }
+
+    .footer-logo-btn {
+        margin: 0;
     }
 }
 
