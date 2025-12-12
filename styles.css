@@ -1501,21 +1501,63 @@ body {
         grid-template-columns: 1fr;
     }
 
+    .volunteer-cta-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .volunteer-cta-text {
+        text-align: center;
+    }
+
+    .volunteer-cta-text h2 {
+        font-size: 2rem;
+    }
+
+    .volunteer-cta-text h3 {
+        font-size: 1.5rem;
+    }
+
+    .volunteer-cta-text p {
+        font-size: 1rem;
+    }
+
+    .footer-social-small {
+        justify-content: center;
+    }
+
+    .footer-section {
+        text-align: center;
+    }
+
     .chatbot-container {
+        position: fixed;
         width: calc(100vw - 40px);
-        right: 20px;
+        right: 50%;
         left: auto;
+        transform: translateX(50%);
         height: 400px;
+        max-width: 350px;
+        bottom: 100px;
     }
 
     .chatbot-wrapper {
         right: 20px;
         bottom: 20px;
+        left: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+    }
+
+    .footer-logo-btn {
+        margin: 0;
     }
 
     .scroll-to-top {
         left: 20px;
         bottom: 20px;
+        right: auto;
     }
 }
 
@@ -1540,10 +1582,27 @@ body {
     }
 
     .chatbot-container {
+        position: fixed;
         width: calc(100vw - 40px);
-        right: 20px;
+        right: 50%;
         left: auto;
+        transform: translateX(50%);
         height: 350px;
+        max-width: 350px;
+        bottom: 100px;
+    }
+
+    .chatbot-wrapper {
+        right: 20px;
+        transform: none;
+        left: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+    }
+
+    .footer-logo-btn {
+        margin: 0;
     }
 }
 

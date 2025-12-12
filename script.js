@@ -66,14 +66,23 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         }
         
-        // Mostrar botão voltar ao topo apenas após o banner (não aparece no banner)
-        if (scrollToTopBtn && heroBanner) {
-            const bannerHeight = heroBanner.offsetHeight;
-            // Só mostra se passou completamente do banner
-            if (currentScroll > bannerHeight + 50) {
-                scrollToTopBtn.classList.add('visible');
+        // Mostrar botão voltar ao topo
+        if (scrollToTopBtn) {
+            if (heroBanner) {
+                // Se existe banner, só mostra após passar dele
+                const bannerHeight = heroBanner.offsetHeight;
+                if (currentScroll > bannerHeight + 50) {
+                    scrollToTopBtn.classList.add('visible');
+                } else {
+                    scrollToTopBtn.classList.remove('visible');
+                }
             } else {
-                scrollToTopBtn.classList.remove('visible');
+                // Se não existe banner, mostra após scroll mínimo
+                if (currentScroll > 300) {
+                    scrollToTopBtn.classList.add('visible');
+                } else {
+                    scrollToTopBtn.classList.remove('visible');
+                }
             }
         }
         
