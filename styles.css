@@ -5,6 +5,23 @@
     box-sizing: border-box;
 }
 
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+img, video, iframe, embed, object {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+table {
+    width: 100%;
+    table-layout: fixed;
+}
+
 :root {
     --primary-color: #FF6B6B;
     --secondary-color: #4ECDC4;
@@ -17,18 +34,28 @@
     --shadow-hover: 0 5px 20px rgba(0, 0, 0, 0.15);
 }
 
+html {
+    overflow-x: hidden;
+    max-width: 100%;
+}
+
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
     color: var(--text-color);
     background-color: var(--white);
     padding-top: 80px;
+    overflow-x: hidden;
+    max-width: 100%;
+    width: 100%;
 }
 
 .container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 /* Menu Flutuante */
@@ -508,6 +535,9 @@ body {
     color: var(--white);
     padding: 60px 20px;
     text-align: center;
+    width: 100%;
+    box-sizing: border-box;
+    overflow-x: hidden;
 }
 
 .page-header h1 {
@@ -996,6 +1026,9 @@ body {
 /* Content Sections */
 .content-section {
     padding: 60px 20px;
+    width: 100%;
+    box-sizing: border-box;
+    overflow-x: hidden;
 }
 
 .about-content {
@@ -1037,6 +1070,8 @@ body {
     grid-template-columns: 1fr 1fr;
     gap: 50px;
     align-items: center;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .about-section-content.reverse {
@@ -1049,6 +1084,8 @@ body {
 
 .about-text {
     padding: 20px;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .about-text h3 {
@@ -1071,13 +1108,16 @@ body {
     border-radius: 15px;
     overflow: hidden;
     box-shadow: var(--shadow-hover);
+    box-sizing: border-box;
 }
 
 .about-image img {
     width: 100%;
     height: 100%;
+    max-width: 100%;
     object-fit: cover;
     transition: transform 0.3s ease;
+    display: block;
 }
 
 .about-image img:hover {
@@ -1573,6 +1613,7 @@ body {
     .about-section-content {
         grid-template-columns: 1fr;
         gap: 30px;
+        width: 100%;
     }
 
     .about-section-content.reverse {
@@ -1581,6 +1622,7 @@ body {
 
     .about-text {
         text-align: center;
+        padding: 15px;
     }
 
     .about-text h3 {
@@ -1589,6 +1631,21 @@ body {
 
     .about-image {
         max-height: 400px;
+        width: 100%;
+    }
+
+    .container {
+        padding: 0 15px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .content-section {
+        padding: 40px 15px;
+    }
+
+    .page-header {
+        padding: 40px 15px;
     }
 
     .vmv-grid,
@@ -1665,13 +1722,14 @@ body {
 
     .chatbot-container {
         position: fixed;
-        width: calc(100vw - 40px);
+        width: calc(100% - 40px);
+        max-width: 350px;
         right: 50%;
         left: auto;
         transform: translateX(50%);
         height: 400px;
-        max-width: 350px;
         bottom: 100px;
+        box-sizing: border-box;
     }
 
     .chatbot-wrapper {
@@ -1716,13 +1774,14 @@ body {
 
     .chatbot-container {
         position: fixed;
-        width: calc(100vw - 40px);
+        width: calc(100% - 40px);
+        max-width: 350px;
         right: 50%;
         left: auto;
         transform: translateX(50%);
         height: 350px;
-        max-width: 350px;
         bottom: 100px;
+        box-sizing: border-box;
     }
 
     .chatbot-wrapper {
